@@ -50,14 +50,14 @@ export default function Ministerios() {
           <Card key={m.slug} className="overflow-hidden">
             <div className="relative">
               <img src={ministeriosImg} alt="" aria-hidden className="h-36 w-full object-cover" loading="lazy" />
-              <div aria-hidden className="absolute inset-0 bg-mel-blue700/25" />
+              <div aria-hidden className="absolute inset-0 bg-mel-blue-700/25" />
             </div>
             <div className="p-5">
               <h2 className="font-display text-sm font-semibold uppercase tracking-[0.22em]">{m.title}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{m.desc}</p>
               <Link
                 to={`/ministerios/${m.slug}`}
-                className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-md bg-mel-blue700 px-4 font-display text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground"
+                className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-md bg-mel-blue-700 px-4 font-display text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground"
               >
                 Ver detalhes
               </Link>

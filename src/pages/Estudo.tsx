@@ -74,12 +74,12 @@ export default function Estudo() {
             <div className="grid gap-4 md:grid-cols-3">
               {SERIES.map((s) => (
                 <Card key={s.titulo} className="flex flex-col p-6">
-                  <BookOpen className="h-5 w-5 text-mel-blue700" aria-hidden />
+                  <BookOpen className="h-5 w-5 text-mel-blue-700" aria-hidden />
                   <h3 className="mt-3 font-display text-[18px] font-semibold text-foreground">{s.titulo}</h3>
                   <p className="mt-2 flex-1 text-sm text-muted-foreground">{s.desc}</p>
                   <a
                     href={s.href}
-                    className="mt-4 inline-flex h-10 items-center justify-center gap-2 rounded-md bg-mel-blue700 px-4 font-display text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground"
+                    className="mt-4 inline-flex h-10 items-center justify-center gap-2 rounded-md bg-mel-blue-700 px-4 font-display text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground"
                   >
                     <Video className="h-4 w-4" aria-hidden />
                     Assistir

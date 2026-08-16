@@ -146,12 +146,12 @@ export function ElementorHeader() {
         {/* Desktop */}
         <div className="hidden grid-cols-[15.39%_84.61%] items-center md:grid">
           <div className="flex items-center justify-start">
-            <div className="inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-br from-card/95 to-card/90 px-3 py-2 shadow-lg ring-1 ring-mel-blue800/20 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2.5 rounded-lg bg-gradient-to-br from-card/95 to-card/90 px-3 py-2 shadow-lg ring-1 ring-mel-blue-800/20 backdrop-blur-sm">
               <button
                 type="button"
                 onClick={togglePlay}
                 aria-label={isPlaying ? t("radio_pause") : t("radio_play")}
-                className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-mel-blue700 to-mel-blue800 text-primary-foreground transition-all hover:scale-105 hover:shadow-md active:scale-95"
+                className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-mel-blue-700 to-mel-blue-800 text-primary-foreground transition-all hover:scale-105 hover:shadow-md active:scale-95"
               >
                 {isPlaying ? <PauseCircle className="h-5 w-5" /> : <PlayCircle className="h-5 w-5" />}
               </button>
@@ -164,7 +164,7 @@ export function ElementorHeader() {
                 type="button"
                 onClick={toggleMute}
                 aria-label={isMuted ? t("unmute") : t("mute")}
-                className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-mel-blue700/80 to-mel-blue800/80 text-primary-foreground transition-all hover:scale-105 hover:shadow-md active:scale-95"
+                className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-mel-blue-700/80 to-mel-blue-800/80 text-primary-foreground transition-all hover:scale-105 hover:shadow-md active:scale-95"
               >
                 {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
               </button>

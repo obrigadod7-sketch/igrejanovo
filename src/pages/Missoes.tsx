@@ -62,7 +62,7 @@ export default function Missoes() {
             <div className="grid gap-4 md:grid-cols-3">
               {FORMAS.map(({ icon: Icon, titulo, desc }) => (
                 <Card key={titulo} className="p-6">
-                  <Icon className="h-5 w-5 text-mel-blue700" aria-hidden />
+                  <Icon className="h-5 w-5 text-mel-blue-700" aria-hidden />
                   <h3 className="mt-3 font-display text-[18px] font-semibold text-foreground">{titulo}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
                 </Card>

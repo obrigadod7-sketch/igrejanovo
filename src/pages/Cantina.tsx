@@ -29,17 +29,17 @@ export default function Cantina() {
         <section id="horarios" aria-label="Horários da cantina" className="bg-background">
           <div className="container grid gap-4 py-10 md:grid-cols-3 md:py-16">
             <Card className="p-6">
-              <Clock className="h-5 w-5 text-mel-blue700" aria-hidden />
+              <Clock className="h-5 w-5 text-mel-blue-700" aria-hidden />
               <h2 className="mt-3 font-display text-[18px] font-semibold">Domingo</h2>
               <p className="mt-2 text-sm text-muted-foreground">Aberta após o culto da família, a partir das 12h30.</p>
             </Card>
             <Card className="p-6">
-              <Coffee className="h-5 w-5 text-mel-blue700" aria-hidden />
+              <Coffee className="h-5 w-5 text-mel-blue-700" aria-hidden />
               <h2 className="mt-3 font-display text-[18px] font-semibold">Eventos especiais</h2>
               <p className="mt-2 text-sm text-muted-foreground">Funciona também em batismos, santas ceias e encontros.</p>
             </Card>
             <Card className="p-6">
-              <HeartHandshake className="h-5 w-5 text-mel-blue700" aria-hidden />
+              <HeartHandshake className="h-5 w-5 text-mel-blue-700" aria-hidden />
               <h2 className="mt-3 font-display text-[18px] font-semibold">Para que serve</h2>
               <p className="mt-2 text-sm text-muted-foreground">O valor arrecadado apoia missões e as obras da igreja.</p>
             </Card>

@@ -33,7 +33,7 @@ export default function MinisterioJovens() {
             <div className="grid gap-4 md:grid-cols-3">
               {ATIVIDADES.map(({ icon: Icon, titulo, desc }) => (
                 <Card key={titulo} className="p-6">
-                  <Icon className="h-5 w-5 text-mel-blue700" aria-hidden />
+                  <Icon className="h-5 w-5 text-mel-blue-700" aria-hidden />
                   <h3 className="mt-3 font-display text-[18px] font-semibold">{titulo}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
                 </Card>
@@ -51,7 +51,7 @@ export default function MinisterioJovens() {
             </p>
             <a
               href="https://missionevangeliquelusitana.com/pedidos-de-oracao/"
-              className="mt-6 inline-flex h-11 items-center justify-center rounded-md bg-mel-blue700 px-6 font-display text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground"
+              className="mt-6 inline-flex h-11 items-center justify-center rounded-md bg-mel-blue-700 px-6 font-display text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground"
             >
               Falar conosco
             </a>
