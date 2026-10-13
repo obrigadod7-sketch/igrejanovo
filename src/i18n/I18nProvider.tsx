@@ -13,23 +13,23 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 const DICT: Record<Language, Record<string, string>> = {
   pt: {
     menu: "MENU",
-    live: "LIVE",
+    live: "AO VIVO",
     mute: "Silenciar",
     unmute: "Ativar som",
     radio_play: "Tocar rádio",
     radio_pause: "Pausar rádio",
 
-    nav_home: "HOME",
-    nav_estudo: "STUDY",
-    nav_cultos: "SERVICES",
-    nav_missoes: "MISSIONS",
-    nav_ministerios: "MINISTRIES",
-    nav_oracao: "REQUEST PRAYER",
-    nav_infantil: "KIDS",
-    nav_dashboard_kids: "KIDS DASHBOARD",
-    nav_cantina: "CAFETERIA",
-    nav_celulas: "HOME GROUPS",
-    nav_familia_pastoral: "PASTORAL FAMILY",
+    nav_home: "INÍCIO",
+    nav_estudo: "ESTUDO",
+    nav_cultos: "CULTOS AO VIVO",
+    nav_missoes: "MISSÕES",
+    nav_ministerios: "MINISTÉRIOS",
+    nav_oracao: "PEDIDOS DE ORAÇÃO",
+    nav_infantil: "INFANTIL",
+    nav_dashboard_kids: "PAINEL INFANTIL",
+    nav_cantina: "CANTINA",
+    nav_celulas: "CÉLULAS",
+    nav_familia_pastoral: "FAMÍLIA PASTORAL",
 
     home_hero_aria: "Hero",
     home_hero_alt: "Banner da Missão Evangélica Lusitana",
@@ -66,12 +66,12 @@ const DICT: Record<Language, Record<string, string>> = {
     cat_worship: "Louvor e Adoração",
     cat_study_romans: "Estudo de Romanos",
 
-    page_estudo_title: "Study",
-    page_cultos_title: "Live Services",
-    page_cantina_title: "Cafeteria",
-    page_missoes_title: "Missions",
+    page_estudo_title: "Estudo",
+    page_cultos_title: "Cultos ao Vivo",
+    page_cantina_title: "Cantina",
+    page_missoes_title: "Missões",
     page_ministerios_title: "Ministérios da Igreja",
-    page_kids_title: "Kids",
+    page_kids_title: "Infantil",
     page_jovens_title: "Ministério dos Jovens",
 
     footer_rights: "Todos os direitos reservados.",
@@ -208,15 +208,32 @@ const DICT: Record<Language, Record<string, string>> = {
   },
 };
 
+const STORAGE_KEY = "mel-language";
+
+function getInitialLanguage(): Language {
+  if (typeof window === "undefined") return "pt";
+  const saved = window.localStorage.getItem(STORAGE_KEY);
+  return saved === "en" || saved === "fr" ? saved : "pt";
+}
+
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState<Language>("pt");
+  const [lang, setLang] = useState<Language>(getInitialLanguage);
 
   const value = useMemo<I18nContextValue>(() => {
     const t = (key: string) => DICT[lang]?.[key] ?? DICT.pt[key] ?? key;
     return { lang, setLang, t };
   }, [lang]);
 
-  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
+  const setLangPersisted = (next: Language) => {
+    setLang(next);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, next);
+    } catch {
+      // localStorage indisponível — segue sem persistir
+    }
+  };
+
+  return <I18nContext.Provider value={{ lang, setLang: setLangPersisted, t: value.t }}>{children}</I18nContext.Provider>;
 }
 
 export function useI18n() {
